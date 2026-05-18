@@ -6,10 +6,25 @@
 //
 
 // Most of the code is from Duy's SparseBox
-// thank you @jurre111 for the original implementation
+// thank you @jurre111 for the original implementation + all the nugget tweak implements
 // thank you @lunginspector for the rewrite + tweak additions
 
 import SwiftUI
+
+enum fileloc: String, CaseIterable {
+    case springboard = "/var/Managed Preferences/mobile/com.apple.springboard.plist"
+    case footnote = "/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/SharedDeviceConfiguration.plist"
+    case airdrop = "/var/Managed Preferences/mobile/com.apple.sharingd.plist"
+    case nanoregistry = "/var/mobile/Library/Preferences/com.apple.NanoRegistry.plist"
+
+    case globalprefs = "/var/Managed Preferences/mobile/.GlobalPreferences.plist"
+    case appstore = "/var/Managed Preferences/mobile/com.apple.AppStore.plist"
+    case backboardd = "/var/Managed Preferences/mobile/com.apple.backboardd.plist"
+    case coremotion = "/var/Managed Preferences/mobile/com.apple.CoreMotion.plist"
+    case pasteboard = "/var/Managed Preferences/mobile/com.apple.Pasteboard.plist"
+    case notes = "/var/Managed Preferences/mobile/com.apple.mobilenotes.plist"
+    case uikit = "/var/Managed Preferences/mobile/com.apple.UIKit.plist"
+}
 
 let mgCurrentPath = "/private/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist"
 
@@ -17,7 +32,7 @@ struct GestaltView: View {
     @AppStorage("gestaltwarn") private var gestaltwarn: Bool = true
     @AppStorage("mgDeviceName") private var mgDeviceName: String = ""
     
-    @EnvironmentObject private var mgr: laramgr
+    let mgr: laramgr
     @State private var mgCurrentDict: NSMutableDictionary = NSMutableDictionary()
     @State private var isGestaltVaild: Bool = false
     
@@ -29,12 +44,24 @@ struct GestaltView: View {
     
     @State private var mgShowFileSheet: Bool = false
     
+    @State private var nuggetValues: [String: Bool] = [:]
+    
     var body: some View {
         NavigationStack {
             List {
                 Section(header: HeaderLabel(text: "Applying", icon: "checkmark")) {
-                    Button("Apply MobileGestalt", action: { applyGestalt() })
-                    Button("Reset MobileGestalt", action: { restoreGestalt() })
+                    Button {
+                        applyGestalt()
+                    } label: {
+                        Text("Apply MobileGestalt")
+                    }
+                    
+                    Button {
+                        resetnugget()
+                        restoreGestalt()
+                    } label: {
+                        Text("Reset MobileGestalt")
+                    }
                 }
                 
                 // artwork tweaks will be added when applying mobilegestalt because there's no "toggleable" bindings.
@@ -153,6 +180,202 @@ struct GestaltView: View {
                     PlainToggle(text: "Internal Features", icon: "gearshape", isOn: mgInternalStuffBinding())
                     PlainToggle(text: "Metal HUD in All Apps", icon: "terminal", isOn: mgKeyBinding(["EqrsVvjcYDdxHBiQmGhAWw"]))
                 }
+                
+                Section {
+                    PlainToggle(
+                        text: "Hide Dynamic Island Completely",
+                        icon: "capsule",
+                        isOn: nuggetbinding(
+                            "SBSuppressDynamicIslandCompletely",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Authentication Debug Line",
+                        icon: "faceid",
+                        isOn: nuggetbinding(
+                            "SBShowAuthenticationEngineeringUI",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Show Build Version",
+                        icon: "number",
+                        isOn: nuggetbinding(
+                            "UIStatusBarShowBuildVersion",
+                            path: fileloc.globalprefs.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Force RTL Layout",
+                        icon: "arrow.left",
+                        isOn: nuggetbinding(
+                            "NSForceRightToLeftWritingDirection",
+                            path: fileloc.globalprefs.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Keyboard Character Flick",
+                        icon: "keyboard",
+                        isOn: nuggetbinding(
+                            "GesturesEnabled",
+                            path: fileloc.globalprefs.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Disable Breadcrumbs",
+                        icon: "chevron.backward",
+                        isOn: nuggetbinding(
+                            "SBNeverBreadcrumb",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+                } header: {
+                    HeaderLabel(text: "UI Tweaks", icon: "eye")
+                }
+                
+                Section {
+                    PlainToggle(
+                        text: "Disable Lock After Respring",
+                        icon: "lock.open",
+                        isOn: nuggetbinding(
+                            "SBDontLockAfterCrash",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Disable Low Battery Alerts",
+                        icon: "battery.25",
+                        isOn: nuggetbinding(
+                            "SBHideLowPowerAlerts",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Show Dynamic Island in Screenshots",
+                        icon: "camera",
+                        isOn: nuggetbinding(
+                            "SBAlwaysShowSystemApertureInSnapshots",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Play Sound on Paste",
+                        icon: "speaker.wave.2",
+                        isOn: nuggetbinding(
+                            "PlaySoundOnPaste",
+                            path: fileloc.pasteboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "System Paste Notifications",
+                        icon: "doc.on.clipboard",
+                        isOn: nuggetbinding(
+                            "AnnounceAllPastes",
+                            path: fileloc.pasteboard.rawValue
+                        )
+                    )
+                } header: {
+                    HeaderLabel(text: "System Tweaks", icon: "gear")
+                }
+                
+                Section {
+                    PlainToggle(
+                        text: "Disable Lock After Respring",
+                        icon: "lock.open",
+                        isOn: nuggetbinding(
+                            "SBDontLockAfterCrash",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Disable Low Battery Alerts",
+                        icon: "battery.25",
+                        isOn: nuggetbinding(
+                            "SBHideLowPowerAlerts",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Show Dynamic Island in Screenshots",
+                        icon: "camera",
+                        isOn: nuggetbinding(
+                            "SBAlwaysShowSystemApertureInSnapshots",
+                            path: fileloc.springboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Play Sound on Paste",
+                        icon: "speaker.wave.2",
+                        isOn: nuggetbinding(
+                            "PlaySoundOnPaste",
+                            path: fileloc.pasteboard.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "System Paste Notifications",
+                        icon: "doc.on.clipboard",
+                        isOn: nuggetbinding(
+                            "AnnounceAllPastes",
+                            path: fileloc.pasteboard.rawValue
+                        )
+                    )
+                } header: {
+                    HeaderLabel(text: "System Tweaks", icon: "gear")
+                }
+                
+                Section {
+                    PlainToggle(
+                        text: "Metal HUD Debug",
+                        icon: "cpu",
+                        isOn: nuggetbinding(
+                            "MetalForceHudEnabled",
+                            path: fileloc.globalprefs.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "App Store Debug Gesture",
+                        icon: "hand.tap",
+                        isOn: nuggetbinding(
+                            "debugGestureEnabled",
+                            path: fileloc.appstore.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Notes Debug Mode",
+                        icon: "note.text",
+                        isOn: nuggetbinding(
+                            "DebugModeEnabled",
+                            path: fileloc.notes.rawValue
+                        )
+                    )
+
+                    PlainToggle(
+                        text: "Show Touches",
+                        icon: "hand.point.up.left",
+                        isOn: nuggetbinding(
+                            "BKDigitizerVisualizeTouches",
+                            path: fileloc.backboardd.rawValue
+                        )
+                    )
+                } header: {
+                    HeaderLabel(text: "Debug", icon: "ladybug")
+                }
             }
             .navigationTitle("MobileGesalt")
             .toolbar {
@@ -166,6 +389,7 @@ struct GestaltView: View {
             }
             .onAppear {
                 loadCurrentGestalt()
+                loadnuggettweaks()
                 
                 if gestaltwarn {
                     showgestaltwarn = true
@@ -413,11 +637,135 @@ struct GestaltView: View {
             }
         )
     }
+    
+    private func loadnuggettweaks() {
+        nuggetValues.removeAll()
+
+        let tweaks: [(String, String)] = [
+            ("SBSuppressDynamicIslandCompletely", fileloc.springboard.rawValue),
+            ("SBShowAuthenticationEngineeringUI", fileloc.springboard.rawValue),
+            ("UIStatusBarShowBuildVersion", fileloc.globalprefs.rawValue),
+            ("NSForceRightToLeftWritingDirection", fileloc.globalprefs.rawValue),
+            ("NSForceLeftToRightWritingDirection", fileloc.globalprefs.rawValue),
+            ("GesturesEnabled", fileloc.globalprefs.rawValue),
+            ("SBDisableClockIconSecondsHand", fileloc.globalprefs.rawValue),
+            ("SBHardwareButtonHintDropletsAlwaysVisibleInSnapshots", fileloc.globalprefs.rawValue),
+            ("BKHideAppleLogoOnLaunch", fileloc.backboardd.rawValue),
+            ("SBNeverBreadcrumb", fileloc.springboard.rawValue),
+            ("SBShowSupervisionTextOnLockScreen", fileloc.springboard.rawValue),
+
+            ("OverrideTimeLimitEveryoneMode", fileloc.airdrop.rawValue),
+            ("SBDontLockAfterCrash", fileloc.springboard.rawValue),
+            ("SBDontDimOrLockOnAC", fileloc.springboard.rawValue),
+            ("SBHideLowPowerAlerts", fileloc.springboard.rawValue),
+            ("SBHideACPower", fileloc.springboard.rawValue),
+            ("SBAlwaysShowSystemApertureInSnapshots", fileloc.springboard.rawValue),
+            ("SBExtendedDisplayOverrideSupportForAirPlayAndDontFileRadars", fileloc.springboard.rawValue),
+            ("SBIconVisibility", fileloc.globalprefs.rawValue),
+            ("SBSearchDisabledDomains", fileloc.globalprefs.rawValue),
+            ("EnableWakeGestureHaptic", fileloc.coremotion.rawValue),
+            ("PlaySoundOnPaste", fileloc.pasteboard.rawValue),
+            ("AnnounceAllPastes", fileloc.pasteboard.rawValue),
+
+            ("MetalForceHudEnabled", fileloc.globalprefs.rawValue),
+            ("iMessageDiagnosticsEnabled", fileloc.globalprefs.rawValue),
+            ("IDSDiagnosticsEnabled", fileloc.globalprefs.rawValue),
+            ("VCDiagnosticsEnabled", fileloc.globalprefs.rawValue),
+            ("AccessoryDeveloperEnabled", fileloc.globalprefs.rawValue),
+            ("debugGestureEnabled", fileloc.appstore.rawValue),
+            ("DebugModeEnabled", fileloc.notes.rawValue),
+            ("BKDigitizerVisualizeTouches", fileloc.backboardd.rawValue)
+        ]
+
+        for (key, path) in tweaks {
+            let result = mgr.getplistvalue(path: path, key: key)
+
+            if result.ok, let value = result.value as? Bool {
+                nuggetValues[key] = value
+            } else {
+                nuggetValues[key] = false
+            }
+        }
+    }
+
+    private func nuggetbinding(
+        _ key: String,
+        path: String
+    ) -> Binding<Bool> {
+        Binding(
+            get: {
+                nuggetValues[key] ?? false
+            },
+            set: { enabled in
+                nuggetValues[key] = enabled
+
+                let result = mgr.setplistvalue(
+                    path: path,
+                    key: (key, enabled ? true : nil),
+                    force: true
+                )
+
+                if !result.ok {
+                    Alertinator.shared.alert(
+                        title: "Failed to Apply Tweak",
+                        body: result.message
+                    )
+                }
+            }
+        )
+    }
+
+    private func resetnugget() {
+        let tweaks: [(String, String)] = [
+            ("SBSuppressDynamicIslandCompletely", fileloc.springboard.rawValue),
+            ("SBShowAuthenticationEngineeringUI", fileloc.springboard.rawValue),
+            ("UIStatusBarShowBuildVersion", fileloc.globalprefs.rawValue),
+            ("NSForceRightToLeftWritingDirection", fileloc.globalprefs.rawValue),
+            ("NSForceLeftToRightWritingDirection", fileloc.globalprefs.rawValue),
+            ("GesturesEnabled", fileloc.globalprefs.rawValue),
+            ("SBDisableClockIconSecondsHand", fileloc.globalprefs.rawValue),
+            ("SBHardwareButtonHintDropletsAlwaysVisibleInSnapshots", fileloc.globalprefs.rawValue),
+            ("BKHideAppleLogoOnLaunch", fileloc.backboardd.rawValue),
+            ("SBNeverBreadcrumb", fileloc.springboard.rawValue),
+            ("SBShowSupervisionTextOnLockScreen", fileloc.springboard.rawValue),
+
+            ("OverrideTimeLimitEveryoneMode", fileloc.airdrop.rawValue),
+            ("SBDontLockAfterCrash", fileloc.springboard.rawValue),
+            ("SBDontDimOrLockOnAC", fileloc.springboard.rawValue),
+            ("SBHideLowPowerAlerts", fileloc.springboard.rawValue),
+            ("SBHideACPower", fileloc.springboard.rawValue),
+            ("SBAlwaysShowSystemApertureInSnapshots", fileloc.springboard.rawValue),
+            ("SBExtendedDisplayOverrideSupportForAirPlayAndDontFileRadars", fileloc.springboard.rawValue),
+            ("SBIconVisibility", fileloc.globalprefs.rawValue),
+            ("SBSearchDisabledDomains", fileloc.globalprefs.rawValue),
+            ("EnableWakeGestureHaptic", fileloc.coremotion.rawValue),
+            ("PlaySoundOnPaste", fileloc.pasteboard.rawValue),
+            ("AnnounceAllPastes", fileloc.pasteboard.rawValue),
+
+            ("MetalForceHudEnabled", fileloc.globalprefs.rawValue),
+            ("iMessageDiagnosticsEnabled", fileloc.globalprefs.rawValue),
+            ("IDSDiagnosticsEnabled", fileloc.globalprefs.rawValue),
+            ("VCDiagnosticsEnabled", fileloc.globalprefs.rawValue),
+            ("AccessoryDeveloperEnabled", fileloc.globalprefs.rawValue),
+            ("debugGestureEnabled", fileloc.appstore.rawValue),
+            ("DebugModeEnabled", fileloc.notes.rawValue),
+            ("BKDigitizerVisualizeTouches", fileloc.backboardd.rawValue)
+        ]
+
+        for (key, path) in tweaks {
+            _ = mgr.setplistvalue(
+                path: path,
+                key: (key, nil),
+                force: true
+            )
+        }
+
+        loadnuggettweaks()
+    }
 }
 
 #Preview {
-    GestaltView()
-        .environmentObject(laramgr())
+    GestaltView(mgr: laramgr())
 }
 
 func verifyPlist(_ plist: Any, targetPath: String) throws -> Data {

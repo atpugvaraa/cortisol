@@ -561,6 +561,64 @@ final class laramgr: ObservableObject {
         }
         return appList
     }
+    
+    func setplistvalue(path: String, key: (key: String, value: Any?), force: Bool = false) -> (ok: Bool, message: String) {
+        do {
+            let fm = FileManager.default
+            var dict = NSMutableDictionary()
+            if !fm.fileExists(atPath: path) {
+                if !force { return (false, "file at \(path) does not exist or couldn't be found") }
+            } else {
+                if let dictfromplist = NSMutableDictionary(contentsOf: URL(fileURLWithPath: path)) {
+                    dict = dictfromplist
+                } else {
+                    return (false, "could not convert plist at \(path) to readable data")
+                }
+            }
+            if let value = key.value {
+                dict[key.key] = value
+            } else {
+                dict.removeObject(forKey: key.key)
+            }
+            let data = try PropertyListSerialization.data(
+                fromPropertyList: dict,
+                format: .binary,
+                options: 0
+            )
+            let result = self.lara_overwritefile(
+                target: path,
+                data: data
+            )
+            if result.ok {
+                return (true, "overwrote plist at path \(path)")
+            } else {
+                return(false, "overwrite failed: \(result.message)")
+            }
+        } catch {
+            return (false, "an error occurred: \(error)")
+        }
+    }
+
+    func getplistvalue(path: String, key: String) -> (ok: Bool, message: String, value: Any?) {
+        do {
+            let fm = FileManager.default
+            if fm.fileExists(atPath: path) {
+                if let dict = NSDictionary(contentsOf: URL(fileURLWithPath: path)) {
+                    if let value = dict[key] {
+                        return (true, "success", value)
+                    } else {
+                        return (false, "key \(key) not found", nil)
+                    }
+                } else {
+                    return(false, "could not convert plist at \(path) to readable data", nil)
+                }
+            } else {
+                return (false, "file at \(path) does not exist or couldn't be found", nil)
+            }
+        } catch {
+            return (false, "an error occurred: \(error)", nil)
+        }
+    }
 
     @discardableResult
     func apfsown(path: String, uid: UInt32, gid: UInt32) -> Bool {
