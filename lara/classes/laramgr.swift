@@ -351,7 +351,7 @@ final class laramgr: ObservableObject {
     }
     
     @discardableResult
-    func lara_overwritefile(target: String, source: String) -> (ok: Bool, message: String) {
+    func lara_overwritefile(target: String, source: String, fallback_vfs: Bool = true) -> (ok: Bool, message: String) {
         guard FileManager.default.fileExists(atPath: source) else {
             return (false, "source file not found: \(source)")
         }
@@ -371,6 +371,10 @@ final class laramgr: ObservableObject {
         if result.ok {
             return result
         }
+
+        guard fallback_vfs else {
+            return result
+        }
         
         guard vfsready else {
             return (false, result.message + " | vfs not ready")
@@ -381,9 +385,13 @@ final class laramgr: ObservableObject {
     }
     
     @discardableResult
-    func lara_overwritefile(target: String, data: Data) -> (ok: Bool, message: String) {
+    func lara_overwritefile(target: String, data: Data, fallback_vfs: Bool = true) -> (ok: Bool, message: String) {
         let result = sbxready ? sbxoverwrite(path: target, data: data) : (false, "sbx not ready")
         if result.0 {
+            return result
+        }
+
+        guard fallback_vfs else {
             return result
         }
         
