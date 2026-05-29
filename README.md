@@ -1,15 +1,15 @@
 <div align="center">
   <br>
-  <a href="https://discord.gg/gw8PcRF3Jr"><img src="https://github.com/rooootdev/lara/blob/main/lara.png?raw=true" alt="JESSI Logo" width="200"></a>
+  <a href="https://discord.gg/Mb4F9Gmuex"><img src="https://github.com/atpugvaraa/cortisol/blob/main/cortisol.png?raw=true" alt="low-cortisol" width="200"></a>
   <br>
-  <h1>LARA</h1>
+  <h1>cortisol</h1>
 
   <p>A customization toolbox that utilizes DarkSword. iOS 17.0 - iOS 18.7.1 & iOS 26.0.x, excluding M5 and A19.</p>
   <p>star this repo please :P</p>
 </div>
 
 <p align="center">
-  <a href="https://discord.gg/gw8PcRF3Jr">
+  <a href="https://discord.gg/Mb4F9Gmuex">
     <img src="https://img.shields.io/badge/Discord-Join%20Server-7289DA.svg" alt="Discord">
   </a>
   <a href="https://github.com/rooootdev/lara/stargazers">
@@ -50,7 +50,7 @@ Important Notes:
 - YMMV on M-series CPUs. If you are on an M-series device, try going to lara settings, selecting `Modify Offsets`, and setting `t1sz_boot` to `0x11`.
 - Issues involving lara not working on either unsupported or *technically* supported versions will be closed immediately.
 
-## Releases
+<!-- ## Releases
 <p align="center">
   <h3>Latest Stable</h3>
   <a href="https://celloserenity.github.io/altdirect/?url=https://raw.githubusercontent.com/rooootdev/lara/refs/heads/main/source.json" target="_blank">
@@ -67,14 +67,34 @@ Important Notes:
   <a href="https://github.com/rooootdev/lara/releases/download/nightly/lara.ipa" target="_blank">
     <img src="https://github.com/CelloSerenity/altdirect/blob/main/assets/png/Download_White.png?raw=true" alt="Download .ipa" width="200">
   </a>
-</p>
+</p> -->
+
+## How to install and use:
+- clone the repo: `git clone https://github.com/atpugvaraa/cortisol.git`
+- run `cd nodejs-project`
+- run `npm install`
+- run `cd .. && open cortisol.xcodeproj`
+- change build settings to work with your signing developer account
+- you have a working nodejs runtime in `/NodeMobile`
+
+### For root acces
+- Run Exploit
+- Initialize System
+- go to third tab (Node Server Manager View)
+- check server health for uptime
+- use wifi ip to curl files from file system
+- or go over to USB tab and follow the instructions for access using a macbook.
 
 ## Features
 ### Implemented
+- File Manager (Full Disk r/w)
+- access over USB Tethering
+- access over same wifi-network (embedded node.js)
+
+### From lara
 - Font Overwrite
 - Custom Overwrite
 - Card Overwrite
-- File Manager (Full Disk r/w)
 - MobileGestalt Editor
 - 3 App Bypass
 - DirtyZero 2
@@ -90,34 +110,6 @@ Important Notes:
 ### Coming Soon
 - App Decrypt
 
-## Known Issues
-- wont work on M5, A19 and A19 Pro due to MTE
-- the kernel may panic when lara is closed from the app switcher.
-- dirtyzero does not work.
-- apps don't detect JIT enabled however they are enabled.
-- remotecall is super bugged and may not work properly.
-
-### Fixes
-**kernelcache download fix (manual fallback):**
-
-1. Download the IPSW tool for your device [here](https://github.com/blacktop/ipsw/releases/tag/v3.1.671).
-2. Extract the archive.
-3. Open Terminal.
-4. Navigate to the extracted folder:
-   ```sh
-   cd /path/to/ipsw_3.1.671_something_something/
-   ```
-5. Extract the kernel:
-   ```sh
-   ./ipsw extract --kernel [drag your ipsw here]
-   ```
-6. Get the kernelcache file.
-7. Transfer the kernelcache to your iPhone.
-8. In the Files app:
-   - Go to "On My iPhone" > "lara"
-   - Place the kernelcache file there.
-9. Rename the file to `kernelcache` (without extension).
-
 ## Tips
 - deleting and redownloading kernelcache is known to fix many issues. do this before asking me for support.
 - closing and reopening the app can fix font change issues.
@@ -127,6 +119,7 @@ Important Notes:
 - opa334 for the kernel exploit poc, ChOma and XPF
 - AppInstaller iOS for help with offsets
 - AlfieCG for libgrabkernel2
+- rooootdev and community for <a href="https://github.com/rooootdev/lara">lara</a>
 - Everyone who contributed! (Visible <a href="https://github.com/rooootdev/lara/graphs/contributors">Here</a>)
 
 <br> 

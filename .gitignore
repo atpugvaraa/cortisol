@@ -2,3 +2,5 @@ Resources/*
 xcuserdata/
 *.xcuserstate
 .DS_Store
+/build
+/nodejs-project/node_modules

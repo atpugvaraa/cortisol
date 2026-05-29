@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		UUID /* folderDark.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* folderDark.materialrecipe */; };
+		UUID /* homeScreenBackdrop-application.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* homeScreenBackdrop-application.materialrecipe */; };
+		UUID /* dockDark.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* dockDark.materialrecipe */; };
+		UUID /* platters.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* platters.materialrecipe */; };
+		UUID /* HomeBarAssets.car in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* HomeBarAssets.car */; };
+		UUID /* modules.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* modules.materialrecipe */; };
+		UUID /* folderExpandedBackgroundHome.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* folderExpandedBackgroundHome.materialrecipe */; };
+		UUID /* platterVibrantShadowDark.visualstyleset in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* platterVibrantShadowDark.visualstyleset */; };
+		UUID /* homeScreenOverlay.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* homeScreenOverlay.materialrecipe */; };
+		UUID /* homeScreenOverlay-iPad.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* homeScreenOverlay-iPad.materialrecipe */; };
+		UUID /* plattersDark.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* plattersDark.materialrecipe */; };
+		UUID /* podBackgroundViewLight.visualstyleset in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* podBackgroundViewLight.visualstyleset */; };
+		UUID /* dockLight.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* dockLight.materialrecipe */; };
+		UUID /* folderLight.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* folderLight.materialrecipe */; };
+		UUID /* platterVibrantShadowLight.visualstyleset in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* platterVibrantShadowLight.visualstyleset */; };
+		UUID /* replacement.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* replacement.materialrecipe */; };
+		UUID /* modulesBackground.materialrecipe in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* modulesBackground.materialrecipe */; };
+		UUID /* podBackgroundViewDark.visualstyleset in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* podBackgroundViewDark.visualstyleset */; };
+		UUID /* nodejs-project in Resources */ = {isa = PBXBuildFile; fileRef = UUID /* nodejs-project */; };
+		UUID /* NodeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = UUID /* NodeMobile.framework */; };
+		UUID /* NodeMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = UUID /* NodeMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		UUID /* darksword.m in Sources */ = {isa = PBXBuildFile; fileRef = UUID /* darksword.m */; };
+		UUID /* libxpf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = UUID /* libxpf.dylib */; };
+		UUID /* libgrabkernel2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = UUID /* libgrabkernel2.dylib */; };
+		UUID /* libgrabkernel2.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = UUID /* libgrabkernel2.dylib */; };
+		UUID /* libxpf.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = UUID /* libxpf.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		UUID /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				UUID /* libgrabkernel2.dylib in Embed Frameworks */,
+				UUID /* NodeMobile.framework in Embed Frameworks */,
+				UUID /* libxpf.dylib in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		UUID /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		UUID /* HomeBarAssets.car */ = {isa = PBXFileReference; lastKnownFileType = file; path = HomeBarAssets.car; sourceTree = "<group>"; };
+		UUID /* homeScreenBackdrop-application.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "homeScreenBackdrop-application.materialrecipe"; sourceTree = "<group>"; };
+		UUID /* dockDark.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = dockDark.materialrecipe; sourceTree = "<group>"; };
+		UUID /* dockLight.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = dockLight.materialrecipe; sourceTree = "<group>"; };
+		UUID /* folderDark.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = folderDark.materialrecipe; sourceTree = "<group>"; };
+		UUID /* folderLight.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = folderLight.materialrecipe; sourceTree = "<group>"; };
+		UUID /* folderExpandedBackgroundHome.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = folderExpandedBackgroundHome.materialrecipe; sourceTree = "<group>"; };
+		UUID /* homeScreenOverlay-iPad.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "homeScreenOverlay-iPad.materialrecipe"; sourceTree = "<group>"; };
+		UUID /* homeScreenOverlay.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = homeScreenOverlay.materialrecipe; sourceTree = "<group>"; };
+		UUID /* podBackgroundViewDark.visualstyleset */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = podBackgroundViewDark.visualstyleset; sourceTree = "<group>"; };
+		UUID /* podBackgroundViewLight.visualstyleset */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = podBackgroundViewLight.visualstyleset; sourceTree = "<group>"; };
+		UUID /* modules.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = modules.materialrecipe; sourceTree = "<group>"; };
+		UUID /* modulesBackground.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = modulesBackground.materialrecipe; sourceTree = "<group>"; };
+		UUID /* platters.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = platters.materialrecipe; sourceTree = "<group>"; };
+		UUID /* plattersDark.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = plattersDark.materialrecipe; sourceTree = "<group>"; };
+		UUID /* platterVibrantShadowDark.visualstyleset */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = platterVibrantShadowDark.visualstyleset; sourceTree = "<group>"; };
+		UUID /* platterVibrantShadowLight.visualstyleset */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = platterVibrantShadowLight.visualstyleset; sourceTree = "<group>"; };
+		UUID /* replacement.materialrecipe */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = replacement.materialrecipe; sourceTree = "<group>"; };
+		UUID /* nodejs-project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "nodejs-project"; sourceTree = "<group>"; };
+		UUID /* NodeMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NodeMobile.framework; path = NodeMobile/NodeMobile.framework; sourceTree = "<group>"; };
+		UUID /* darksword.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = darksword.m; path = cortisol/kexploit/darksword.m; sourceTree = "<group>"; };
+		UUID /* libxpf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxpf.dylib; path = cortisol/lib/libxpf.dylib; sourceTree = "<group>"; };
+		UUID /* libgrabkernel2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgrabkernel2.dylib; path = cortisol/lib/libgrabkernel2.dylib; sourceTree = "<group>"; };
+		UUID /* cortisol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cortisol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		UUID /* libSystem.B.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.B.tbd; path = usr/lib/libSystem.B.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		UUID /* Exceptions for "cortisol" folder in "cortisol" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = UUID /* cortisol */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		UUID /* cortisol */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				UUID /* Exceptions for "cortisol" folder in "cortisol" target */,
+			);
+			path = cortisol;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		UUID /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				UUID /* libgrabkernel2.dylib in Frameworks */,
+				UUID /* NodeMobile.framework in Frameworks */,
+				UUID /* libxpf.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		UUID /* Dock */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* dockDark.materialrecipe */,
+				UUID /* dockLight.materialrecipe */,
+			);
+			path = Dock;
+			sourceTree = "<group>";
+		};
+		UUID /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* folderDark.materialrecipe */,
+				UUID /* folderLight.materialrecipe */,
+			);
+			path = Folder;
+			sourceTree = "<group>";
+		};
+		UUID /* FolderBG */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* folderExpandedBackgroundHome.materialrecipe */,
+				UUID /* homeScreenOverlay-iPad.materialrecipe */,
+				UUID /* homeScreenOverlay.materialrecipe */,
+			);
+			path = FolderBG;
+			sourceTree = "<group>";
+		};
+		UUID /* LibraryFolder */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* podBackgroundViewDark.visualstyleset */,
+				UUID /* podBackgroundViewLight.visualstyleset */,
+			);
+			path = LibraryFolder;
+			sourceTree = "<group>";
+		};
+		UUID /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* modules.materialrecipe */,
+				UUID /* modulesBackground.materialrecipe */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		UUID /* Notif */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* platters.materialrecipe */,
+				UUID /* plattersDark.materialrecipe */,
+			);
+			path = Notif;
+			sourceTree = "<group>";
+		};
+		UUID /* NotifShadow */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* platterVibrantShadowDark.visualstyleset */,
+				UUID /* platterVibrantShadowLight.visualstyleset */,
+			);
+			path = NotifShadow;
+			sourceTree = "<group>";
+		};
+		UUID /* BackupFiles */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* HomeBarAssets.car */,
+				UUID /* homeScreenBackdrop-application.materialrecipe */,
+				UUID /* Dock */,
+				UUID /* Folder */,
+				UUID /* FolderBG */,
+				UUID /* LibraryFolder */,
+				UUID /* Module */,
+				UUID /* Notif */,
+				UUID /* NotifShadow */,
+			);
+			path = BackupFiles;
+			sourceTree = "<group>";
+		};
+		UUID /* SpringboardFiles */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* BackupFiles */,
+				UUID /* replacement.materialrecipe */,
+			);
+			path = SpringboardFiles;
+			sourceTree = "<group>";
+		};
+		UUID /* OverwriteFiles */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* SpringboardFiles */,
+			);
+			path = OverwriteFiles;
+			sourceTree = "<group>";
+		};
+		UUID = {
+			isa = PBXGroup;
+			children = (
+				UUID /* nodejs-project */,
+				UUID /* OverwriteFiles */,
+				UUID /* cortisol */,
+				UUID /* Products */,
+				UUID /* Recovered References */,
+				UUID /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		UUID /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* cortisol.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		UUID /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* darksword.m */,
+				UUID /* libxpf.dylib */,
+				UUID /* libgrabkernel2.dylib */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		UUID /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				UUID /* libSystem.B.tbd */,
+				UUID /* NodeMobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		UUID /* cortisol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = UUID /* Build configuration list for PBXNativeTarget "cortisol" */;
+			buildPhases = (
+				UUID /* Sources */,
+				UUID /* Frameworks */,
+				UUID /* Embed Frameworks */,
+				UUID /* Force Sign Embedded Dylibs */,
+				UUID /* Resources */,
+				UUID /* Embed App Clips */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				UUID /* cortisol */,
+			);
+			name = cortisol;
+			packageProductDependencies = (
+			);
+			productName = lara;
+			productReference = UUID /* cortisol.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		UUID /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					UUID = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+				};
+			};
+			buildConfigurationList = UUID /* Build configuration list for PBXProject "cortisol" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = UUID;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = UUID /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				UUID /* cortisol */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		UUID /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				UUID /* folderDark.materialrecipe in Resources */,
+				UUID /* homeScreenBackdrop-application.materialrecipe in Resources */,
+				UUID /* dockDark.materialrecipe in Resources */,
+				UUID /* platters.materialrecipe in Resources */,
+				UUID /* HomeBarAssets.car in Resources */,
+				UUID /* modules.materialrecipe in Resources */,
+				UUID /* folderExpandedBackgroundHome.materialrecipe in Resources */,
+				UUID /* nodejs-project in Resources */,
+				UUID /* platterVibrantShadowDark.visualstyleset in Resources */,
+				UUID /* homeScreenOverlay.materialrecipe in Resources */,
+				UUID /* homeScreenOverlay-iPad.materialrecipe in Resources */,
+				UUID /* plattersDark.materialrecipe in Resources */,
+				UUID /* podBackgroundViewLight.visualstyleset in Resources */,
+				UUID /* dockLight.materialrecipe in Resources */,
+				UUID /* folderLight.materialrecipe in Resources */,
+				UUID /* platterVibrantShadowLight.visualstyleset in Resources */,
+				UUID /* replacement.materialrecipe in Resources */,
+				UUID /* modulesBackground.materialrecipe in Resources */,
+				UUID /* podBackgroundViewDark.visualstyleset in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		UUID /* Force Sign Embedded Dylibs */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
+				"$(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libgrabkernel2.dylib",
+				"$(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libxpf.dylib",
+			);
+			name = "Force Sign Embedded Dylibs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e; if [ -z \"$EXPANDED_CODE_SIGN_IDENTITY\" ]; then exit 0; fi; fw=\"$CODESIGNING_FOLDER_PATH/Frameworks\"; for f in \"$fw/libgrabkernel2.dylib\" \"$fw/libxpf.dylib\"; do if [ -f \"$f\" ]; then /usr/bin/codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" --timestamp=none \"$f\"; fi; done";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		UUID /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				UUID /* darksword.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		UUID /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64e;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DN4S6CXFWY;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		UUID /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64e;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DN4S6CXFWY;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		UUID /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64e;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = Release;
+				DEVELOPMENT_TEAM = 3YK32DPS3W;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NodeMobile",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/cortisol",
+					"$(SRCROOT)/cortisol/kexploit",
+				);
+				INFOPLIST_FILE = cortisol/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = cortisol;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cortisol/lib",
+				);
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaravgupta.low-cortisol";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "cortisol/cortisol-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		UUID /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64e;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = Release;
+				DEVELOPMENT_TEAM = 3YK32DPS3W;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NodeMobile",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/cortisol",
+					"$(SRCROOT)/cortisol/kexploit",
+				);
+				INFOPLIST_FILE = cortisol/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = cortisol;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cortisol/lib",
+				);
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "aaravgupta.low-cortisol";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "cortisol/cortisol-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		UUID /* Build configuration list for PBXProject "cortisol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				UUID /* Debug */,
+				UUID /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		UUID /* Build configuration list for PBXNativeTarget "cortisol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				UUID /* Debug */,
+				UUID /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = UUID /* Project object */;
+}
